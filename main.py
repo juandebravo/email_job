@@ -5,8 +5,8 @@
 import ConfigParser
 import csv
 
-from contact import Contact
-from mail_service import MailService
+from email_job.contact import Contact
+from email_job.mail_service import MailService
 
 config = ConfigParser.SafeConfigParser()
 config.read('config.cfg')
