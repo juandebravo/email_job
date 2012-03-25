@@ -18,6 +18,7 @@ This simple script allows you to load a CSV file with contacts information and s
 	port=<valid_port>
 
 	[email]
+	contacts=contacts.csv
 	subject=<valid_subject>
 	from_email=<valid_from_email>
 	text=<email_text_plain>

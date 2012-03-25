@@ -11,16 +11,15 @@ from mail_service import MailService
 config = ConfigParser.SafeConfigParser()
 config.read('config.cfg')
 
-
-# Load CSV file
-contacts = csv.reader(open('contacts.csv', 'rb'), delimiter=',')
-
-# Create Contacts
-contacts = [Contact(c[0], c[1]) for c in contacts if not c[0].startswith("#")]
-
 # Load configuration
 server_config = dict((k, v) for k, v in config.items("server"))
 mail_config = dict((k, v) for k, v in config.items("email"))
+
+# Load CSV file
+contacts = csv.reader(open(mail_config['contacts'], 'rb'), delimiter=',')
+
+# Create Contacts
+contacts = [Contact(c[0], c[1]) for c in contacts if not c[0].startswith("#")]
 
 s = server_config
 
